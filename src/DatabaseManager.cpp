@@ -46,7 +46,8 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
                 FOREIGN KEY (post_id) REFERENCES Posts (id)
             );
         )");
-        
+        std::cout << "Database schema verified/created successfully." << std::endl;
+
     }catch(const std::exception& e){
         std::cerr << "Error creating schema: " << e.what() << std::endl;
     }
@@ -55,5 +56,75 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
 // write the rest of the member function executions here
 
 bool DatabaseManager::addUser(const std::string& username, const std::string& password, const std::string& role, const std::string& fullname){
+    if(isUsernameTaken(username)){
+        return false;
+    }
+    try {
+        SQLite::Statement query(db, "INSERT INTO Users (username, password_hash, role, full_name) VALUES (?, ?, ?, ?)");
+        
+        // Bind parameters to the statement
+        // Note: We are not hashing the password yet, we will add that later.
+        query.bind(1, username);
+        query.bind(2, password); // Placeholder for password_hash
+        query.bind(3, role);
+        query.bind(4, fullname);
+        
+        // Execute the query
+        query.exec();
+        return true;
 
+    } catch (const std::exception& e) {
+        std::cerr << "Database error in addUser: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+bool DatabaseManager::isUsernameTaken(const std::string& username){
+    try{
+        SQLite::Statement query(db, R"(
+                SELECT * 
+                FROM Users 
+                WHERE username = ?
+            )" );
+
+        // Bind parameters to the statement
+        query.bind(1, username);
+
+        // `executeStep()` returns true if a row was found
+        return query.executeStep();
+
+    } catch (const std::exception& e){
+        std::cerr << "Database error in isUsernameTaken: " << e.what() << std::endl;
+        return true;  // Assume taken on error to be safe
+    }
+}
+
+std::optional<User> DatabaseManager::getUserByUsername(const std::string& username){
+    try{
+        SQLite::Statement query(db, R"(
+                SELECT *
+                FROM Users
+                WHERE username = ?
+            )");
+
+        // Bind parameters to the statement
+        query.bind(1, username);
+
+        // if user is found
+        if(query.executeStep()) {
+            User user;
+            user.id = query.getColumn("id");
+            user.username = query.getColumn("username").getString();
+            user.fullname = query.getColumn("full_name").getString();
+            user.role = query.getColumn("role").getString();
+            user.bio = query.getColumn("bio").getString();
+            user.skills = query.getColumn("skills").getString();
+            return user;
+        }
+
+    } catch (const std::exception& e){
+        std::cerr << "Database error in getUserByUsername: " << e.what() << std::endl;
+    }
+    // return empty optional (empty wrapper) if not found/ error
+    return std::nullopt;
 }

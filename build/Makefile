@@ -321,6 +321,30 @@ lib/sqlitecpp/src/Transaction.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.s
 .PHONY : lib/sqlitecpp/src/Transaction.cpp.s
 
+src/DatabaseManager.o: src/DatabaseManager.cpp.o
+.PHONY : src/DatabaseManager.o
+
+# target to build an object file
+src/DatabaseManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o
+.PHONY : src/DatabaseManager.cpp.o
+
+src/DatabaseManager.i: src/DatabaseManager.cpp.i
+.PHONY : src/DatabaseManager.i
+
+# target to preprocess a source file
+src/DatabaseManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.i
+.PHONY : src/DatabaseManager.cpp.i
+
+src/DatabaseManager.s: src/DatabaseManager.cpp.s
+.PHONY : src/DatabaseManager.s
+
+# target to generate assembly for a file
+src/DatabaseManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.s
+.PHONY : src/DatabaseManager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -378,6 +402,9 @@ help:
 	@echo "... lib/sqlitecpp/src/Transaction.o"
 	@echo "... lib/sqlitecpp/src/Transaction.i"
 	@echo "... lib/sqlitecpp/src/Transaction.s"
+	@echo "... src/DatabaseManager.o"
+	@echo "... src/DatabaseManager.i"
+	@echo "... src/DatabaseManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

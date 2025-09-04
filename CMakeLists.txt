@@ -20,6 +20,7 @@ include_directories(
 # NOTE: We now also give it the sqlite3.c file to compile!
 add_executable(UserConnect
     src/main.cpp
+    src/DatabaseManager.cpp
     lib/sqlite/sqlite3.c
     lib/sqlitecpp/src/Backup.cpp
     lib/sqlitecpp/src/Column.cpp

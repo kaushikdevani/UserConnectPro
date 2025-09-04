@@ -1,5 +1,4 @@
 #pragma once   // so that the file only include once (safety reasons)
-
 #include <string>
 
 class User{

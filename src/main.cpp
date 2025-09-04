@@ -1,24 +1,34 @@
 #include <iostream>
-#include <SQLiteCpp/SQLiteCpp.h>
+#include "DatabaseManager.h"
 
 int main() {
-    // A try-catch block is essential for database operations
-    try {
-        // Open a database file named "UserConnect.db" in the same folder as the executable.
-        // It will be created automatically if it doesn't exist.
-        SQLite::Database db("UserConnect.db", SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE);
+    // We will create the DB file in the build directory
+    DatabaseManager dbManager("UserConnect.db");
 
-        std::cout << "Database file created/opened successfully." << std::endl;
+    std::cout << "\n--- Testing User Management ---\n";
 
-        // Create the Users table
-        std::cout << "Creating Users table..." << std::endl;
-        db.exec("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY, name TEXT)");
-        std::cout << "Table 'Users' created successfully." << std::endl;
+    // Test adding a new user
+    std::cout << "Attempting to add user 'kaushik'...\n";
+    bool success = dbManager.addUser("nithya", "pass123", "Student", "Nithyashree");
+    if (success) {
+        std::cout << "User 'nithya' added successfully.\n";
+    } else {
+        std::cout << "Failed to add user 'nithya' (might already exist).\n";
+    }
 
-    } catch (const std::exception& e) {
-        // If anything goes wrong, this will print the error
-        std::cerr << "SQLite exception: " << e.what() << std::endl;
-        return 1; // Return a non-zero value to indicate failure
+    // Test fetching the user
+    std::cout << "\nAttempting to fetch user 'nithya'...\n";
+    auto userOptional = dbManager.getUserByUsername("nithya");
+
+    if (userOptional) { // Check if the optional contains a value
+        User user = *userOptional; // Get the user object from the optional
+        std::cout << "User Found!\n";
+        std::cout << "  ID: " << user.id << "\n";
+        std::cout << "  Username: " << user.username << "\n";
+        std::cout << "  Full Name: " << user.fullname << "\n";
+        std::cout << "  Role: " << user.role << "\n";
+    } else {
+        std::cout << "User 'kaushik' not found.\n";
     }
 
     return 0;

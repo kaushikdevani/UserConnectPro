@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Savepoint.cpp" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o" "gcc" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o.d"
   "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Statement.cpp" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o" "gcc" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o.d"
   "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Transaction.cpp" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o" "gcc" "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o.d"
+  "/Users/kaushikdevani/UserConnect/src/DatabaseManager.cpp" "CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o" "gcc" "CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o.d"
   "/Users/kaushikdevani/UserConnect/src/main.cpp" "CMakeFiles/UserConnect.dir/src/main.cpp.o" "gcc" "CMakeFiles/UserConnect.dir/src/main.cpp.o.d"
   )
 

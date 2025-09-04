@@ -2,10 +2,14 @@
 
 #include <SQLiteCpp/SQLiteCpp.h>
 #include <string>
-#include <optional>  // its a wrapper, kind of like replacement for pointers
-#include "User.h"    // import user class
+#include <optional>          // its a wrapper, kind of like replacement for pointers
+#include "User.h"            // import User class
+#include "Post.h"            // import Post class
+#include "Enrollments.h"     // import Enrollments class
 
 class DatabaseManager {
+private:
+    SQLite::Database db;
 public:
     // Constructor to open the database connection
     DatabaseManager(const std::string& DbPath);
@@ -16,7 +20,6 @@ public:
     std::optional<User> getUserByUsername(const std::string& username);
 
     // Post Related Functions
+    // Enrollements Related Functions
     // we shall add these when required later.
-private:
-    SQLite::Database db;
 };
