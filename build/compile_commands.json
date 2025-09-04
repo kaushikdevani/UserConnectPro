@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/src/main.cpp.o -c /Users/kaushikdevani/UserConnect/src/main.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/src/main.cpp",
+  "output": "CMakeFiles/UserConnect.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o -c /Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Backup.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Backup.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Column.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Column.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Database.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Database.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Exception.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Exception.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Savepoint.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Savepoint.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Statement.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Statement.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Transaction.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Transaction.cpp",
+  "output": "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o"
+}
+]

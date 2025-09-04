@@ -1,0 +1,22 @@
+#pragma once    // so that file gets included only once
+
+#include <SQLiteCpp/SQLiteCpp.h>
+#include <string>
+#include <optional>  // its a wrapper, kind of like replacement for pointers
+#include "User.h"    // import user class
+
+class DatabaseManager {
+public:
+    // Constructor to open the database connection
+    DatabaseManager(const std::string& DbPath);
+
+    // User Related Functions
+    bool addUser(const std::string& username, const std::string& password, const std::string& role, const std::string& fullname);
+    bool isUsernameTaken(const std::string& username);
+    std::optional<User> getUserByUsername(const std::string& username);
+
+    // Post Related Functions
+    // we shall add these when required later.
+private:
+    SQLite::Database db;
+};
