@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o.d"
   "CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o"
   "CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o.d"
+  "CMakeFiles/UserConnect.dir/src/ViewController.cpp.o"
+  "CMakeFiles/UserConnect.dir/src/ViewController.cpp.o.d"
   "CMakeFiles/UserConnect.dir/src/main.cpp.o"
   "CMakeFiles/UserConnect.dir/src/main.cpp.o.d"
   "UserConnect"

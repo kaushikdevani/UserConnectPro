@@ -13,6 +13,12 @@
 },
 {
   "directory": "/Users/kaushikdevani/UserConnect/build",
+  "command": "/usr/bin/clang++  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/UserConnect.dir/src/ViewController.cpp.o -c /Users/kaushikdevani/UserConnect/src/ViewController.cpp",
+  "file": "/Users/kaushikdevani/UserConnect/src/ViewController.cpp",
+  "output": "CMakeFiles/UserConnect.dir/src/ViewController.cpp.o"
+},
+{
+  "directory": "/Users/kaushikdevani/UserConnect/build",
   "command": "/usr/bin/clang  -I/Users/kaushikdevani/UserConnect/include -I/Users/kaushikdevani/UserConnect/lib/sqlite -I/Users/kaushikdevani/UserConnect/lib/sqlitecpp/include -g -arch arm64 -o CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o -c /Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c",
   "file": "/Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c",
   "output": "CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o"

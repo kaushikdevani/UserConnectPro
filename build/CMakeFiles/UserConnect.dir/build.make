@@ -100,10 +100,24 @@ CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kaushikdevani/UserConnect/src/DatabaseManager.cpp -o CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.s
 
+CMakeFiles/UserConnect.dir/src/ViewController.cpp.o: CMakeFiles/UserConnect.dir/flags.make
+CMakeFiles/UserConnect.dir/src/ViewController.cpp.o: /Users/kaushikdevani/UserConnect/src/ViewController.cpp
+CMakeFiles/UserConnect.dir/src/ViewController.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UserConnect.dir/src/ViewController.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/src/ViewController.cpp.o -MF CMakeFiles/UserConnect.dir/src/ViewController.cpp.o.d -o CMakeFiles/UserConnect.dir/src/ViewController.cpp.o -c /Users/kaushikdevani/UserConnect/src/ViewController.cpp
+
+CMakeFiles/UserConnect.dir/src/ViewController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/UserConnect.dir/src/ViewController.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kaushikdevani/UserConnect/src/ViewController.cpp > CMakeFiles/UserConnect.dir/src/ViewController.cpp.i
+
+CMakeFiles/UserConnect.dir/src/ViewController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/UserConnect.dir/src/ViewController.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kaushikdevani/UserConnect/src/ViewController.cpp -o CMakeFiles/UserConnect.dir/src/ViewController.cpp.s
+
 CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o: /Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c
 CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o -MF CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o.d -o CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o -c /Users/kaushikdevani/UserConnect/lib/sqlite/sqlite3.c
 
 CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Backup.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Backup.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Column.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Column.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Database.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Database.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Database.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Exception.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Exception.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Exception.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Savepoint.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Savepoint.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Savepoint.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Statement.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Statement.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.s: cmake_force
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o: CMakeFiles/UserConnect.dir/flags.make
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o: /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Transaction.cpp
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o: CMakeFiles/UserConnect.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o -MF CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o.d -o CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o -c /Users/kaushikdevani/UserConnect/lib/sqlitecpp/src/Transaction.cpp
 
 CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.i: cmake_force
@@ -216,6 +230,7 @@ CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.s: cmake_force
 UserConnect_OBJECTS = \
 "CMakeFiles/UserConnect.dir/src/main.cpp.o" \
 "CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o" \
+"CMakeFiles/UserConnect.dir/src/ViewController.cpp.o" \
 "CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o" \
 "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o" \
 "CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o" \
@@ -230,6 +245,7 @@ UserConnect_EXTERNAL_OBJECTS =
 
 UserConnect: CMakeFiles/UserConnect.dir/src/main.cpp.o
 UserConnect: CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o
+UserConnect: CMakeFiles/UserConnect.dir/src/ViewController.cpp.o
 UserConnect: CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o
 UserConnect: CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Backup.cpp.o
 UserConnect: CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Column.cpp.o
@@ -240,7 +256,7 @@ UserConnect: CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Statement.cpp.o
 UserConnect: CMakeFiles/UserConnect.dir/lib/sqlitecpp/src/Transaction.cpp.o
 UserConnect: CMakeFiles/UserConnect.dir/build.make
 UserConnect: CMakeFiles/UserConnect.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable UserConnect"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/kaushikdevani/UserConnect/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable UserConnect"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UserConnect.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

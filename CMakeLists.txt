@@ -21,6 +21,7 @@ include_directories(
 add_executable(UserConnect
     src/main.cpp
     src/DatabaseManager.cpp
+    src/ViewController.cpp
     lib/sqlite/sqlite3.c
     lib/sqlitecpp/src/Backup.cpp
     lib/sqlitecpp/src/Column.cpp

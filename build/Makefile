@@ -345,6 +345,30 @@ src/DatabaseManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.s
 .PHONY : src/DatabaseManager.cpp.s
 
+src/ViewController.o: src/ViewController.cpp.o
+.PHONY : src/ViewController.o
+
+# target to build an object file
+src/ViewController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/ViewController.cpp.o
+.PHONY : src/ViewController.cpp.o
+
+src/ViewController.i: src/ViewController.cpp.i
+.PHONY : src/ViewController.i
+
+# target to preprocess a source file
+src/ViewController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/ViewController.cpp.i
+.PHONY : src/ViewController.cpp.i
+
+src/ViewController.s: src/ViewController.cpp.s
+.PHONY : src/ViewController.s
+
+# target to generate assembly for a file
+src/ViewController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UserConnect.dir/build.make CMakeFiles/UserConnect.dir/src/ViewController.cpp.s
+.PHONY : src/ViewController.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -405,6 +429,9 @@ help:
 	@echo "... src/DatabaseManager.o"
 	@echo "... src/DatabaseManager.i"
 	@echo "... src/DatabaseManager.s"
+	@echo "... src/ViewController.o"
+	@echo "... src/ViewController.i"
+	@echo "... src/ViewController.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
