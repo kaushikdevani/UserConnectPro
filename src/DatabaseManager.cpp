@@ -1,7 +1,7 @@
 #include "DatabaseManager.h"
 #include <iostream>
 
-// there isnt a default constructor for SQLite::Database , so we have to construct it in the member initializer list
+// there is no default constructor for SQLite::Database , so we have to construct it in the member initializer list
 
 DatabaseManager::DatabaseManager(const std::string& dbPath)
     :db(dbPath, SQLite::OPEN_READWRITE | SQLite::OPEN_CREATE){
@@ -52,8 +52,6 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
         std::cerr << "Error creating schema: " << e.what() << std::endl;
     }
 }
-
-// write the rest of the member function executions here
 
 bool DatabaseManager::addUser(const std::string& username, const std::string& password, const std::string& role, const std::string& fullname){
     if(isUsernameTaken(username)){
@@ -127,4 +125,79 @@ std::optional<User> DatabaseManager::getUserByUsername(const std::string& userna
     }
     // return empty optional (empty wrapper) if not found/ error
     return std::nullopt;
+}
+
+std::string DatabaseManager::getUserNameByUserID(const int& userID){
+    try{
+        SQLite::Statement query(db, R"(
+                SELECT username
+                FROM Users
+                WHERE id = ?
+            )");
+        query.bind(1,userID);
+
+        if(query.executeStep()){
+            return query.getColumn("username").getString();
+        }
+    }catch(const std::exception& e){
+        std::cout << "Database error at getUserNameByUserID." << std::endl;
+    }
+    return "user unknown/ doesn't exist";     // if there is error, we will inform this as the output of the string.
+}
+
+bool DatabaseManager::createPost(const Post& post){
+    try{
+        SQLite::Statement query(db, "INSERT INTO Posts (type,title,description,owner_id,tags) VALUES (?,?,?,?,?)");
+        query.bind(1,post.type);
+        query.bind(2,post.title);
+        query.bind(3,post.description);
+        query.bind(4,post.ownerID);
+        query.bind(5,post.tags);
+        query.exec();
+        return true;
+    }catch(const std::exception& e){
+        std::cerr << "Database error in CreatePost: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+std::vector<Post> DatabaseManager::getAllPosts(){
+    std::vector<Post> posts;
+    try{
+        SQLite::Statement query(db,"SELECT * FROM Posts");
+        while(query.executeStep()){
+            Post p;
+            p.id = query.getColumn("id");
+            p.title = query.getColumn("title").getString();
+            p.type = query.getColumn("type").getString();
+            p.description = query.getColumn("description").getString();
+            p.tags = query.getColumn("tags").getString();
+            p.ownerID = query.getColumn("owner_id").getInt();
+            posts.push_back(p);
+        }
+    }catch(const std::exception& e){
+        std::cout << "Database Error at getAllPosts: " << e.what() << std::endl;
+    }
+    return posts;
+}
+
+std::vector<Post> DatabaseManager::getPostByOwnerID(int owner_id){
+    std::vector<Post> posts;
+    try{
+        SQLite::Statement query(db,"SELECT * FROM Posts WHERE owner_id = ?");
+        query.bind(1,owner_id);
+        while(query.executeStep()){
+            Post p;
+            p.id = query.getColumn("id");
+            p.title = query.getColumn("title").getString();
+            p.type = query.getColumn("type").getString();
+            p.description = query.getColumn("description").getString();
+            p.tags = query.getColumn("tags").getString();
+            p.ownerID = query.getColumn("owner_id").getInt();
+            posts.push_back(p);
+        }
+    }catch(const std::exception& e){
+        std::cout << "Database Error at getPostByOwnerID: " << e.what() << std::endl;
+    }
+    return posts;
 }

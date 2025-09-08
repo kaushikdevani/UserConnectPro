@@ -8,9 +8,12 @@ private:
     DatabaseManager dbManager;        // for getting the dbManager up running
     std::optional<User> currentUser;  // for storing the current user who's using our application
 
-    void displayMainMenu();         
+    void displayMainMenu();
     void handleRegistation();
     void handleLogin();
+    void handleCreatePost();
+    void displayAllPosts();
+    void displayUserPosts();
 
     //We shall do these later...
     void showStudentDashboard();
