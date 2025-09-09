@@ -18,7 +18,7 @@ public:
     bool addUser(const std::string& username, const std::string& password, const std::string& role, const std::string& fullname);
     bool isUsernameTaken(const std::string& username);
     std::optional<User> getUserByUsername(const std::string& username);
-    std::string getUserNameByUserID(const int& userID);
+    std::string getFullNameByUserID(const int& userID);
 
     // Post Related Functions
     bool createPost(const Post& post);

@@ -135,6 +135,8 @@ void ViewController::handleCreatePost(){
     std::cout << "Enter Tags (e.g #c++ #oops #boring class): ";
     std::getline(std::cin, post.tags);
 
+    post.ownerID = currentUser->id;
+
     bool success = dbManager.createPost(post);
 
     if(success){
@@ -156,7 +158,7 @@ void ViewController::displayAllPosts(){
     std::cout << "------------------Posts------------------" << std::endl;
     for(int i=0; i<total_posts; i++){
         std::cout << "----------------------------------------\n";
-        std::cout << "ID: " << posts[i].id << " | Type: " << posts[i].type << " | Posted By: " << dbManager.getUserNameByUserID(posts[i].ownerID)<< std::endl;
+        std::cout << "ID: " << posts[i].id << " | Type: " << posts[i].type << " | Posted By: " << dbManager.getFullNameByUserID(posts[i].ownerID)<< std::endl;
         std::cout << "Title: " << posts[i].title << std::endl;
         std::cout << "Description: " << posts[i].description << std::endl;
         std::cout << "Tags: " << posts[i].tags << std::endl;

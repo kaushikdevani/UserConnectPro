@@ -127,20 +127,22 @@ std::optional<User> DatabaseManager::getUserByUsername(const std::string& userna
     return std::nullopt;
 }
 
-std::string DatabaseManager::getUserNameByUserID(const int& userID){
+std::string DatabaseManager::getFullNameByUserID(const int& userID){
+    // std::cout << "[Degug] getFullNameByUserID called with userID: " << userID << std::endl;
     try{
         SQLite::Statement query(db, R"(
-                SELECT username
+                SELECT full_name
                 FROM Users
                 WHERE id = ?
             )");
         query.bind(1,userID);
 
         if(query.executeStep()){
-            return query.getColumn("username").getString();
+            // std::cout << "[Debug] query got result." << std::endl;
+            return query.getColumn("full_name").getString();
         }
     }catch(const std::exception& e){
-        std::cout << "Database error at getUserNameByUserID." << std::endl;
+        std::cout << "Database error at getFullNameByUserID." << std::endl;
     }
     return "user unknown/ doesn't exist";     // if there is error, we will inform this as the output of the string.
 }
