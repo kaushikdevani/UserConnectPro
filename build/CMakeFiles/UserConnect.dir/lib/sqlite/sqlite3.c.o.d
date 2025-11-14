@@ -194,6 +194,7 @@ CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/host_info.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/message.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/vm_statistics.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/os/base.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/machine.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/time_value.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/mach/host_notify.h \
@@ -277,7 +278,6 @@ CMakeFiles/UserConnect.dir/lib/sqlite/sqlite3.c.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/file.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/mount.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/attr.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/os/base.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_graftdmg_un.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_mount_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_vnode_t.h \

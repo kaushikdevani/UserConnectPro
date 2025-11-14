@@ -40,7 +40,7 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
             CREATE TABLE IF NOT EXISTS Enrollments (
                 user_id       INTEGER NOT NULL,
                 post_id       INTEGER NOT NULL,
-                status        TEXT NOT NULL CHECK(status IN ('Enrolled', 'Applied', 'Member')),
+                status        TEXT NOT NULL CHECK(status IN ('Enrolled', 'Applied', 'Rejected')),
                 PRIMARY KEY (user_id, post_id),
                 FOREIGN KEY (user_id) REFERENCES Users (id),
                 FOREIGN KEY (post_id) REFERENCES Posts (id)
@@ -54,6 +54,7 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
 }
 
 bool DatabaseManager::addUser(const std::string& username, const std::string& password, const std::string& role, const std::string& fullname){
+
     if(isUsernameTaken(username)){
         return false;
     }
@@ -163,6 +164,26 @@ bool DatabaseManager::createPost(const Post& post){
     }
 }
 
+Post DatabaseManager::getPostFromPostID(int postID){
+    Post post;
+    try{
+        SQLite::Statement query(db,"SELECT * FROM Posts WHERE id = ?");
+        query.bind(1,postID);
+        if(query.executeStep()){
+            post.id = query.getColumn("id");
+            post.title = query.getColumn("title").getString();
+            post.type = query.getColumn("type").getString();
+            post.description = query.getColumn("description").getString();
+            post.tags = query.getColumn("tags").getString();
+            post.ownerID = query.getColumn("owner_id").getInt();
+        }
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database Error in getPostFromPostId: "<< e.what() << std::endl;
+    }
+    return post;
+}
+
 std::vector<Post> DatabaseManager::getAllPosts(){
     std::vector<Post> posts;
     try{
@@ -202,4 +223,132 @@ std::vector<Post> DatabaseManager::getPostByOwnerID(int owner_id){
         std::cout << "Database Error at getPostByOwnerID: " << e.what() << std::endl;
     }
     return posts;
+}
+
+std::vector<Post> DatabaseManager::getMyPosts(int userID){
+    std::vector<Post> myposts;
+    try{
+        SQLite::Statement query(db,R"(
+            SELECT *
+            FROM Enrollments
+            WHERE user_id == ? AND Status = 'Enrolled'
+        )");
+        query.bind(1,userID);
+        while(query.executeStep()){
+            Post post = getPostFromPostID(query.getColumn("post_id"));
+            myposts.push_back(post);
+        }
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database Error in getMyPosts: " << e.what() << std::endl;
+    }
+    return myposts;
+}
+
+bool DatabaseManager::applyToPost(int UserID, int PostID){
+    // Step 1: Check if the post exists
+    try {
+        SQLite::Statement checkQuery(db, "SELECT id FROM Posts WHERE id = ?");
+        checkQuery.bind(1, PostID);
+        
+        if (!checkQuery.executeStep()) {
+            std::cerr << "Apply error: Course/Project with ID " << PostID << " does not exist." << std::endl;
+            return false;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Database error while checking post existence: " << e.what() << std::endl;
+        return false;
+    }
+    // Step 2: If the post exists, proceed to add the application
+    try{
+        SQLite::Statement query(db, "INSERT INTO Enrollments (user_id,post_id,status) VALUES (?,?,'Applied')");
+        query.bind(1,UserID);
+        query.bind(2,PostID);
+        query.exec();
+        return true;
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database error in applyToPost: " << e.what() << std::endl;
+    }
+    return false;
+}
+
+std::vector<Enrollments> DatabaseManager::getApplicationsForPost(int PostID){
+    std::vector<Enrollments> applications;
+    try{
+        SQLite::Statement query(db, R"(
+                SELECT *
+                FROM Enrollments
+                WHERE Enrollments.post_id = ?
+            )");
+        query.bind(1,PostID);
+        while(query.executeStep()){
+            Enrollments application;
+            application.postID = PostID;
+            application.userID = query.getColumn("user_id");
+            application.status = query.getColumn("status").getString();
+
+            applications.push_back(application);
+        }
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database error in getApplicantsForPost: " << e.what() << std::endl; 
+    }
+    return applications;
+}
+
+std::vector<Enrollments> DatabaseManager::getApplicationsForUser(int userID){
+    std::vector<Enrollments> applications;
+    std::vector<Post> posts = getPostByOwnerID(userID);
+    try{
+        for(int i=0; i<posts.size(); i++){
+            std::vector<Enrollments> postApplications = getApplicationsForPost(posts[i].id);
+            for(int j=0; j<postApplications.size(); j++){
+                applications.push_back(postApplications[j]);
+            }
+        }
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database error in getApplicationsForUser: " << e.what() << std::endl;
+    }
+    return applications;
+}
+
+bool DatabaseManager::approveApplication(int UserID, int PostID){
+    try{
+        SQLite::Statement query(db,R"(
+            UPDATE Enrollments
+            SET status = 'Enrolled'
+            WHERE user_id = ? AND post_id = ?
+        )");
+        query.bind(1,UserID);
+        query.bind(2,PostID);
+        if(query.exec()>0){
+            return true;
+        }
+        return false;
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database error in approveApplication: " << e.what() << std::endl;
+        return false;
+    }
+}
+bool DatabaseManager::rejectApplication(int UserID, int PostID){
+    try{
+        SQLite::Statement query(db,R"(
+            UPDATE Enrollments
+            SET status = 'Rejected'
+            WHERE user_id = ? AND post_id = ?
+        )");
+        query.bind(1,UserID);
+        query.bind(2,PostID);
+        if(query.exec()>0){
+            return true;
+        }
+        return false;
+    }
+    catch(const std::exception& e){
+        std::cerr << "Database error in rejectApplication: " << e.what() << std::endl;
+        return false;
+    }
 }

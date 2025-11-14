@@ -19,11 +19,19 @@ public:
     bool isUsernameTaken(const std::string& username);
     std::optional<User> getUserByUsername(const std::string& username);
     std::string getFullNameByUserID(const int& userID);
+    Post getPostFromPostID(int postID);
 
     // Post Related Functions
     bool createPost(const Post& post);
     std::vector<Post> getAllPosts();
     std::vector<Post> getPostByOwnerID(int ownerID);
+    std::vector<Post> getMyPosts(int ownerID);
+
     // Enrollements Related Functions
+    bool applyToPost(int userID, int postID);
+    std::vector<Enrollments> getApplicationsForPost(int postID);
+    std::vector<Enrollments> getApplicationsForUser(int userID);
+    bool approveApplication(int userID, int postID);
+    bool rejectApplication(int userID, int postID);
     // we shall add these when required later.
 };

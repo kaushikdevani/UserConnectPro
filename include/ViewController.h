@@ -12,6 +12,8 @@ private:
     void handleRegistation();
     void handleLogin();
     void handleCreatePost();
+    void handleApplyPost();
+    void handleApplicants();
     void displayAllPosts();
     void displayUserPosts();
 

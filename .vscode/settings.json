@@ -50,6 +50,7 @@
         "map": "cpp",
         "__tree": "cpp",
         "fstream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "cstddef": "cpp"
     }
 }
