@@ -9,4 +9,5 @@ public:
     std::string role;
     std::string bio;
     std::string skills;
+    std::string hashed_password;
 };

@@ -102,13 +102,11 @@ void ViewController::handleLogin(){
     std::cout << "Enter password: ";
     std::getline(std::cin, password);
 
-    // Temperaray code -- must update with actual hashpassword security
-    currentUser = dbManager.getUserByUsername(username);
-
-    if(currentUser){
+    if(dbManager.verifyLogin(username,password)){
+        currentUser = dbManager.getUserByUsername(username);
         std::cout << "Login successful! Welcome, " << currentUser->fullname << "." << std::endl;;
     }else{
-        std::cout << "Login failed. Invalid username or password." << std::endl;
+        std::cout << "Invalid Username/Password\n" << std::endl;
     }
 }
 
@@ -297,34 +295,100 @@ void ViewController::displayUserPosts(){
     }
 }
 
+void ViewController::displayAllTweets(){
+    std::cout << "\n--- ALl Tweets Feed ---\n";
+    std::vector<Tweets> tweets = dbManager.getAllTweets();
+
+    if (tweets.empty()) {
+        std::cout << "The feed is empty. Be the first to post!\n";
+        return;
+    }
+
+    for (const Tweets& tweet : tweets) {
+        std::cout << "-----------------------------------\n";
+        std::cout << "From: " << tweet.owner_name << " (User ID: " << tweet.owner_id << ")\n";
+        std::cout << "At:   " << tweet.time_stamp << "\n";
+        std::cout << "\n  " << tweet.content << "\n";
+    }
+    std::cout << "-----------------------------------\n";
+}
+
+void ViewController::displayMyTweets(){
+    std::cout << "\n--- My Tweets Feed ---\n";
+    std::vector<Tweets> mytweets = dbManager.getMyTweets(currentUser->id);
+
+    if (mytweets.empty()) {
+        std::cout << "You did not create any tweets. Create your first tweet!\n" << std::endl;
+        return;
+    }
+
+    for (const Tweets& tweet : mytweets) {
+        std::cout << "-----------------------------------\n";
+        std::cout << "From: " << tweet.owner_name << " (User ID: " << tweet.owner_id << ")\n";
+        std::cout << "At:   " << tweet.time_stamp << "\n";
+        std::cout << "\n  " << tweet.content << "\n";
+    }
+    std::cout << "-----------------------------------\n";
+}
+
+void ViewController::handleCreateTweet(){
+    std::string content;
+    std::cout << "\n--- Create a New Tweet ---\n";
+    std::cout << "Enter your message: ";
+
+    std::cin.ignore(10000, '\n'); // Clear any leftover input
+    std::getline(std::cin, content);
+
+    if (content.empty()) {
+        std::cout << "Tweet cannot be empty.\n";
+        return;
+    }
+
+    if (dbManager.createTweet(currentUser->id, content)) {
+        std::cout << "Tweet posted successfully!\n";
+    } else {
+        std::cout << "Failed to post tweet.\n";
+    }
+    std::cout << std::endl;
+}
+
 void ViewController::showStudentDashboard() {
     std::cout << "\n--- Welcome to the Student Dashboard ---\n";
 
     int choice = 0;
 
-    while(choice != 4){
+    while(choice != 7){
         std::cout << "\n--- Welcome , " << currentUser->fullname << " , what do want to do today?---\n";
         std::cout << "1. View all Courses and Projects" << std::endl;
         std::cout << "2. Show My Courses and Projects" << std::endl;
         std::cout << "3. Apply to a Course/Project" << std::endl;
-        std::cout << "4. Logout" << std::endl;
+        std::cout << "4. All Tweets" << std::endl;
+        std::cout << "5. My Tweets" << std::endl;
+        std::cout << "6. Create Tweet" << std::endl;
+        std::cout << "7. Logout" << std::endl;
         std::cout << "Enter your choice: " << std::endl;
         std::cin >> choice;
     
         switch (choice) {
-            case 1: {
+            case 1:
                 displayAllPosts();
                 break;
-            }
-            case 2: {
+            case 2:
                 displayUserPosts();
                 break;
-            }
-            case 3: {
+            case 3:
                 handleApplyPost();
                 break;
-            }
             case 4:
+                displayAllTweets();
+                break;
+            case 5:
+                displayMyTweets();
+                break;
+            case 6:
+                handleCreateTweet();
+                break;
+            case 7:
                 std::cout << "Logging out...\n";
                 currentUser = std::nullopt;
                 break;
@@ -343,12 +407,15 @@ void ViewController::showTeacherDashboard() {
     int choice = 0;
     std::cout << "\n--- Welcome Prof. " << currentUser->fullname << " , what do want to do today?---\n";
 
-    while(choice != 5){
+    while(choice != 8){
         std::cout << "1. View all Courses and Projects" << std::endl;
         std::cout << "2. Show My Courses and Projects" << std::endl;
         std::cout << "3. Create a new Course/Project" << std::endl;
         std::cout << "4. View Applicants for My Courses/Projects" << std::endl;
-        std::cout << "5. Logout" << std::endl;
+        std::cout << "5. All Tweets" << std::endl;
+        std::cout << "6. My Tweets" << std::endl;
+        std::cout << "7. Create Tweet" << std::endl;
+        std::cout << "8. Logout" << std::endl;
         std::cout << "Enter your choice: " << std::endl;
         std::cin >> choice;
     
@@ -356,20 +423,25 @@ void ViewController::showTeacherDashboard() {
             case 1:
                 displayAllPosts();
                 break;
-
             case 2:
                 displayUserPosts();
                 break;
-
             case 3:
                 handleCreatePost();
                 break;
-
             case 4:
                 handleApplicants();
                 break;
-
             case 5:
+                displayAllTweets();
+                break;
+            case 6:
+                displayMyTweets();
+                break;
+            case 7:
+                handleCreateTweet();
+                break;
+            case 8:
                 std::cout << "Logging out...\n";
                 currentUser = std::nullopt;
                 break;

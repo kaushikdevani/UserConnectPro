@@ -828,4 +828,5 @@ CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o: \
   /Users/kaushikdevani/UserConnect/include/User.h \
   /Users/kaushikdevani/UserConnect/include/Post.h \
   /Users/kaushikdevani/UserConnect/include/Enrollments.h \
+  /Users/kaushikdevani/UserConnect/include/Tweets.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream

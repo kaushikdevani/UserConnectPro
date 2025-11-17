@@ -829,4 +829,5 @@ CMakeFiles/UserConnect.dir/src/main.cpp.o: \
   /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/Transaction.h \
   /Users/kaushikdevani/UserConnect/include/User.h \
   /Users/kaushikdevani/UserConnect/include/Post.h \
-  /Users/kaushikdevani/UserConnect/include/Enrollments.h
+  /Users/kaushikdevani/UserConnect/include/Enrollments.h \
+  /Users/kaushikdevani/UserConnect/include/Tweets.h

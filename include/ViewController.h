@@ -16,6 +16,9 @@ private:
     void handleApplicants();
     void displayAllPosts();
     void displayUserPosts();
+    void displayAllTweets();
+    void displayMyTweets();
+    void handleCreateTweet();
 
     //We shall do these later...
     void showStudentDashboard();

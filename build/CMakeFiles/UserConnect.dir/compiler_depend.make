@@ -6696,6 +6696,7 @@ CMakeFiles/UserConnect.dir/src/DatabaseManager.cpp.o: /Users/kaushikdevani/UserC
   /Users/kaushikdevani/UserConnect/include/DatabaseManager.h \
   /Users/kaushikdevani/UserConnect/include/Enrollments.h \
   /Users/kaushikdevani/UserConnect/include/Post.h \
+  /Users/kaushikdevani/UserConnect/include/Tweets.h \
   /Users/kaushikdevani/UserConnect/include/User.h \
   /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/Assertion.h \
   /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/Column.h \
@@ -7527,6 +7528,7 @@ CMakeFiles/UserConnect.dir/src/ViewController.cpp.o: /Users/kaushikdevani/UserCo
   /Users/kaushikdevani/UserConnect/include/DatabaseManager.h \
   /Users/kaushikdevani/UserConnect/include/Enrollments.h \
   /Users/kaushikdevani/UserConnect/include/Post.h \
+  /Users/kaushikdevani/UserConnect/include/Tweets.h \
   /Users/kaushikdevani/UserConnect/include/User.h \
   /Users/kaushikdevani/UserConnect/include/ViewController.h \
   /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/Assertion.h \
@@ -8359,6 +8361,7 @@ CMakeFiles/UserConnect.dir/src/main.cpp.o: /Users/kaushikdevani/UserConnect/src/
   /Users/kaushikdevani/UserConnect/include/DatabaseManager.h \
   /Users/kaushikdevani/UserConnect/include/Enrollments.h \
   /Users/kaushikdevani/UserConnect/include/Post.h \
+  /Users/kaushikdevani/UserConnect/include/Tweets.h \
   /Users/kaushikdevani/UserConnect/include/User.h \
   /Users/kaushikdevani/UserConnect/include/ViewController.h \
   /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/Assertion.h \
@@ -8381,6 +8384,8 @@ CMakeFiles/UserConnect.dir/src/main.cpp.o: /Users/kaushikdevani/UserConnect/src/
 /Users/kaushikdevani/UserConnect/lib/sqlitecpp/include/SQLiteCpp/SQLiteCpp.h:
 
 /Users/kaushikdevani/UserConnect/include/User.h:
+
+/Users/kaushikdevani/UserConnect/include/Tweets.h:
 
 /Users/kaushikdevani/UserConnect/include/Post.h:
 

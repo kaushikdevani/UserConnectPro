@@ -46,6 +46,16 @@ DatabaseManager::DatabaseManager(const std::string& dbPath)
                 FOREIGN KEY (post_id) REFERENCES Posts (id)
             );
         )");
+
+        db.exec(R"(
+            CREATE TABLE IF NOT EXISTS Tweets (
+                tweet_id      INTEGER PRIMARY KEY AUTOINCREMENT,
+                owner_id      INTEGER NOT NULL,
+                content       TEXT NOT NULL,
+                time_stamp    DATETIME DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY (owner_id) REFERENCES Users (id) 
+            )
+        )");
         std::cout << "Database schema verified/created successfully." << std::endl;
 
     }catch(const std::exception& e){
@@ -62,9 +72,11 @@ bool DatabaseManager::addUser(const std::string& username, const std::string& pa
         SQLite::Statement query(db, "INSERT INTO Users (username, password_hash, role, full_name) VALUES (?, ?, ?, ?)");
         
         // Bind parameters to the statement
-        // Note: We are not hashing the password yet, we will add that later.
+        
+        std::string hashedPassword = hashPassword(password);
+
         query.bind(1, username);
-        query.bind(2, password); // Placeholder for password_hash
+        query.bind(2, hashedPassword);
         query.bind(3, role);
         query.bind(4, fullname);
         
@@ -76,6 +88,23 @@ bool DatabaseManager::addUser(const std::string& username, const std::string& pa
         std::cerr << "Database error in addUser: " << e.what() << std::endl;
         return false;
     }
+}
+
+bool DatabaseManager::verifyLogin(const std::string& given_username, const std::string given_password){
+    
+    std::optional<User> user = getUserByUsername(given_username);
+    if(user == std::nullopt){
+        std::cout << "Username Invalid \n" ;
+        return false;
+    }
+    std::string givenHashedPassword = hashPassword(given_password);
+    if(user->hashed_password == givenHashedPassword){
+        return true;
+    }else{
+        std::cout << "Incorrect Password\n";
+        return false;
+    }
+    return false;
 }
 
 bool DatabaseManager::isUsernameTaken(const std::string& username){
@@ -118,6 +147,7 @@ std::optional<User> DatabaseManager::getUserByUsername(const std::string& userna
             user.role = query.getColumn("role").getString();
             user.bio = query.getColumn("bio").getString();
             user.skills = query.getColumn("skills").getString();
+            user.hashed_password = query.getColumn("password_hash").getString();
             return user;
         }
 
@@ -351,4 +381,83 @@ bool DatabaseManager::rejectApplication(int UserID, int PostID){
         std::cerr << "Database error in rejectApplication: " << e.what() << std::endl;
         return false;
     }
+}
+
+std::string DatabaseManager::hashPassword(const std::string& password){
+    std::string hash;
+    int n = password.length();
+    for(int i=n-1; i>=0; i--){
+        hash += password[i]+i;
+    }
+    return hash;
+}
+
+bool DatabaseManager::createTweet(int userID,const std::string& content){
+    try {
+        SQLite::Statement query(db, "INSERT INTO Tweets (owner_id, content) VALUES (?, ?)");
+        
+        // Bind parameters to the statement
+        query.bind(1, userID);
+        query.bind(2, content);
+        
+        // Execute the query
+        query.exec();
+        return true;
+
+    } catch (const std::exception& e) {
+        std::cerr << "Database error in createTweet: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+std::vector<Tweets> DatabaseManager::getMyTweets(int userID){
+    std::vector<Tweets> tweets;
+    try{
+        SQLite::Statement query(db,R"(
+            SELECT Tweets.*, Users.full_name
+            FROM Tweets
+            JOIN Users ON Tweets.owner_id = Users.id
+            WHERE Tweets.owner_id = ?
+            ORDER BY Tweets.time_stamp DESC
+        )");
+        query.bind(1,userID);
+        while(query.executeStep()){
+            Tweets tweet;
+            tweet.tweet_id   = query.getColumn("tweet_id");
+            tweet.owner_id   = query.getColumn("owner_id");
+            tweet.owner_name = query.getColumn("full_name").getString();
+            tweet.content    = query.getColumn("content").getString();
+            tweet.time_stamp = query.getColumn("time_stamp").getString();
+
+            tweets.push_back(tweet);
+        }
+    }catch(const std::exception& e){
+        std::cout << "Database Error at getMyTweets: " << e.what() << std::endl;
+    }
+    return tweets;
+}
+
+std::vector<Tweets> DatabaseManager::getAllTweets(){
+    std::vector<Tweets> tweets;
+    try{
+        SQLite::Statement query(db,R"(
+            SELECT Tweets.*, Users.full_name
+            FROM Tweets
+            JOIN Users ON Tweets.owner_id = Users.id
+            ORDER BY Tweets.time_stamp DESC
+        )");
+        while(query.executeStep()){
+            Tweets tweet;
+            tweet.tweet_id   = query.getColumn("tweet_id");
+            tweet.owner_id   = query.getColumn("owner_id");
+            tweet.owner_name = query.getColumn("full_name").getString();
+            tweet.content    = query.getColumn("content").getString();
+            tweet.time_stamp = query.getColumn("time_stamp").getString();
+
+            tweets.push_back(tweet);
+        }
+    }catch(const std::exception& e){
+        std::cout << "Database Error at getMyTweets: " << e.what() << std::endl;
+    }
+    return tweets;
 }
