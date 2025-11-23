@@ -1,3 +1,0 @@
-/Users/kaushikdevani/UserConnect/build/CMakeFiles/UserConnect.dir
-/Users/kaushikdevani/UserConnect/build/CMakeFiles/edit_cache.dir
-/Users/kaushikdevani/UserConnect/build/CMakeFiles/rebuild_cache.dir
