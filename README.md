@@ -39,7 +39,7 @@ You need **CMake** and a C++ compiler (GCC or Clang) installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/kaushikdevani/UserConnectPro.git](https://github.com/kaushikdevani/UserConnectPro.git)
+    git clone https://github.com/kaushikdevani/UserConnectPro.git
     cd UserConnectPro
     ```
 
